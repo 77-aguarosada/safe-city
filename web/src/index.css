@@ -26,6 +26,11 @@ code {
    font:14px Roboto, sans-serif;
  }
 #root{
+
+
+
+
+
   --color-header:#283e4a;
   --color-divulgacar:#0077b5;
   --color-input:#e1e9ee;
@@ -41,6 +46,7 @@ code {
   --color-letter-desktop:#838488;  
   --color-sinza:#808080;
    
+
   }
  button{
    cursor:pointer;
