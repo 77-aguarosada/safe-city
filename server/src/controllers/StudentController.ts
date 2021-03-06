@@ -33,13 +33,31 @@ class StudentController {
     }
 
     async show(request:Request, response:Response){
+     
         const studentsRepository = getCustomRepository(StudentsRepository);
+  
+    
+        const allStudents = await studentsRepository.find()
 
-        const allStudents = studentsRepository.find()
-
-        return response.json(allStudents)
+        return response.json(allStudents);
 
     }
+
+    async update(request:Request, response:Response):Promise<Response>{
+        const studentsRepository = getCustomRepository(StudentsRepository);
+        
+        const student = await studentsRepository.findOne(request.params.id);
+        
+        if (student) {
+            getCustomRepository(StudentsRepository).merge(student, request.body);
+            const results = await getCustomRepository(StudentsRepository).save(student);
+            return response.json(results);
+          }
+          
+          return response.json({error: 'Not student  found'});
+
+     
+      }
 
 }
 
