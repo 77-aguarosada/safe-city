@@ -13,5 +13,6 @@ router.post("/students",studentController.create)
 
 router.get("/students",studentController.show)
 
+router.put("/students/:id",studentController.update)
 
 export {router}
