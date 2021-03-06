@@ -7,16 +7,16 @@ import { v4 as uuid} from "uuid"
      @PrimaryColumn()
      id: string;
      
-     @Column("surname")
+     @Column()
      surname:string;
   
-     @Column("full_name")
+     @Column()
      full_name:string;
   
-     @Column("country")
+     @Column()
      country:string;
   
-     @Column("number_phone")
+     @Column()
      number_phone:string;
      
      @CreateDateColumn()
