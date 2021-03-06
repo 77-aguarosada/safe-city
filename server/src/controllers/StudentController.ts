@@ -59,6 +59,13 @@ class StudentController {
      
       }
 
+      async delete(request:Request,response:Response):Promise<Response>{
+        const studentsRepository = getCustomRepository(StudentsRepository);
+        const results = await getCustomRepository(StudentsRepository).delete(request.params.id);
+        return response.json(results);
+        
+      }
+
 }
 
 export {StudentController}
