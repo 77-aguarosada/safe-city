@@ -9,7 +9,9 @@ const router = Router();
 const studentController = new StudentController()
 
 
-router.get("/students",studentController.create)
+router.post("/students",studentController.create)
+
+router.get("/students",studentController.show)
 
 
 export {router}
