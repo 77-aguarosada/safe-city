@@ -15,4 +15,6 @@ router.get("/students",studentController.show)
 
 router.put("/students/:id",studentController.update)
 
+router.delete("/students/:id",studentController.delete)
+
 export {router}
