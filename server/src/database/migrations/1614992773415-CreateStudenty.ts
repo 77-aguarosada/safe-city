@@ -13,11 +13,19 @@ export class CreateStudenty1614992773415 implements MigrationInterface {
                         isPrimary:true,
                     },
                     {
-                        name:"name",
+                        name:"surname",
                         type:"varchar",
                     },
                     {
-                        name:"email",
+                        name:"full_name",
+                        type:"varchar",
+                    },
+                    {
+                        name:"country",
+                        type:"varchar",
+                    },
+                    {
+                        name:"number_phone",
                         type:"varchar",
                     },
                     {
@@ -32,6 +40,7 @@ export class CreateStudenty1614992773415 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("students");
     }
 
 }
