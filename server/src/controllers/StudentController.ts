@@ -32,6 +32,15 @@ class StudentController {
 
     }
 
+    async show(request:Request, response:Response){
+        const studentsRepository = getCustomRepository(StudentsRepository);
+
+        const allStudents = studentsRepository.find()
+
+        return response.json(allStudents)
+
+    }
+
 }
 
 export {StudentController}
