@@ -5,11 +5,14 @@ section#section{
     flex-direction: column;
     margin: 0 15px;
     padding-top: 15px;
+    
 }
 
 header#header{
     display: flex;
     justify-content: space-between;
+    
+    align-items: center;
 }
 header#header div#logo{
     display: flex;
@@ -31,7 +34,7 @@ header#header div#logo p{
 }
 header#header h2{
     color:#1e1f54;
-    font-weight:400;
+    font-weight:700;
 }
 div#conect a{
   text-decoration: none;
