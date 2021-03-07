@@ -35,8 +35,7 @@ class StudentController {
     async show(request:Request, response:Response){
      
         const studentsRepository = getCustomRepository(StudentsRepository);
-  
-    
+
         const allStudents = await studentsRepository.find()
 
         return response.json(allStudents);
@@ -56,13 +55,13 @@ class StudentController {
           
           return response.json({error: 'Not student  found'});
 
-     
       }
 
       async delete(request:Request,response:Response):Promise<Response>{
         const studentsRepository = getCustomRepository(StudentsRepository);
         const results = await getCustomRepository(StudentsRepository).delete(request.params.id);
-        return response.json(results);
+        
+        return response.json({msg: "the user has been deleted"});
         
       }
 
