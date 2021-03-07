@@ -1,7 +1,7 @@
 import { Column, Entity,CreateDateColumn, PrimaryColumn } from "typeorm";
 import { v4 as uuid} from "uuid"
 
-class Coutry {
+class Country {
     @PrimaryColumn()
     id:string;
 
@@ -18,4 +18,4 @@ class Coutry {
     }
 }
 
-export{Coutry}
+export{Country}
