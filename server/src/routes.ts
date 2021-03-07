@@ -1,5 +1,6 @@
 
 import {Router} from 'express';
+import { RoomController } from './controllers/RoomController';
 import { StudentController } from './controllers/StudentController';
 
 
@@ -16,5 +17,8 @@ router.get("/students",studentController.show)
 router.put("/students/:id",studentController.update)
 
 router.delete("/students/:id",studentController.delete)
+/*/**************************************************/
 
+const roomController = new RoomController()
+router.post("/students/rooms", roomController.create)
 export {router}
