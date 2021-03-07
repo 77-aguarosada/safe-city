@@ -10,13 +10,18 @@ export class CreateRoom1615072686351 implements MigrationInterface {
                  
                     {
                         name:"id",
-                        type:"varchar",
-                        isPrimary:true,
+                        type:"uuid",
+                        isPrimary:true
                     },
                     {
                         name:"numberofRoom",
-                        type:"varchar",
+                        type:"varchar"
                         
+                    },
+                    {
+                        name:"created_at",
+                        type:"timestamp",
+                        default:"now()"
                     },
                  
                 ]
