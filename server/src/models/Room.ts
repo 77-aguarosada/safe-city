@@ -19,9 +19,6 @@ class Room {
     }
 
 
-
-
-
 }
 
 export {Room}
