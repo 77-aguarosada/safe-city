@@ -1,9 +1,10 @@
-import { Column, Entity,CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity,CreateDateColumn, PrimaryColumn } from "typeorm";
+import { v4 as uuid} from "uuid"
 
 @Entity("bedrooms")
 class Room {
-    @PrimaryGeneratedColumn()
-    id:number;
+    @PrimaryColumn()
+    id:string;
 
     @Column()
     numberofRoom:number;
@@ -11,6 +12,14 @@ class Room {
     @CreateDateColumn()
     created_at:Date;
     
+    constructor(){
+        if(!this.id){
+            this.id = uuid();
+        }
+    }
+
+
+
 
 
 }
