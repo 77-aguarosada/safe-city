@@ -1,5 +1,6 @@
-import { Column, Entity,CreateDateColumn, PrimaryColumn } from "typeorm";
+import { Column, Entity,CreateDateColumn, PrimaryColumn, OneToMany } from "typeorm";
 import { v4 as uuid} from "uuid"
+import { Student } from "./Student";
 
 @Entity("countries")
 class Country {
@@ -8,6 +9,9 @@ class Country {
 
     @Column()
     countryStudent:string;
+
+    @OneToMany(type=>Student, country=>Country)
+    student:Student[];
     
     @CreateDateColumn()
     created_at:Date;
