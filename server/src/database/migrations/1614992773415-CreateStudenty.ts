@@ -20,10 +20,7 @@ export class CreateStudenty1614992773415 implements MigrationInterface {
                         name:"full_name",
                         type:"varchar"
                     },
-                    {
-                        name:"country",
-                        type:"varchar"
-                    },
+                  
                     {
                         name:"number_phone",
                         type:"varchar"
