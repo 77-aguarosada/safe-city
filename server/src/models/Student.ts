@@ -1,6 +1,7 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 import { v4 as uuid} from "uuid"
+import { Country } from "./Country";
 
 @Entity("students")
  class Student{
@@ -13,8 +14,9 @@ import { v4 as uuid} from "uuid"
      @Column()
      full_name:string;
   
-     @Column()
-     country:string;
+     @ManyToOne(type=>Country,student=>Student)
+     @JoinColumn()
+     country:Country;
   
      @Column()
      number_phone:string;
