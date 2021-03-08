@@ -6,7 +6,7 @@ import { StudentsRepository } from "../repositories/StudentsRepository";
 class StudentController {
     async create(request:Request , response:Response){
        
-        const {surname , full_name, country,number_phone} = request.body;
+        const {surname , full_name,number_phone} = request.body;
 
         const studentsRepository = getCustomRepository(StudentsRepository);
 
@@ -22,7 +22,7 @@ class StudentController {
         }
 
         const student = studentsRepository.create({
-            surname , full_name, country,number_phone
+            surname , full_name,number_phone
         })
         
         await studentsRepository.save(student)
