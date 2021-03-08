@@ -14,15 +14,14 @@ import { Country } from "./Country";
      @Column()
      full_name:string;
   
-     @ManyToOne(type=>Country,student=>Student)
-     @JoinColumn()
-     country:Country;
+     @ManyToOne(type=>Country,student=>Student,{eager:true})
+     country:Country[];
   
      @Column()
      number_phone:string;
      
      @CreateDateColumn()
-    created_at:Date;
+     created_at:Date;
 
 
      constructor(){

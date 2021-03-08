@@ -10,7 +10,7 @@ class Country {
     @Column()
     countryStudent:string;
 
-    @OneToMany(type=>Student, country=>Country)
+    @OneToMany(type=>Student,country=>Country)
     student:Student[];
     
     @CreateDateColumn()
