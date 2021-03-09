@@ -2,6 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn 
 
 import { v4 as uuid} from "uuid"
 import { Country } from "./Country";
+import { Room } from "./Room";
 
 @Entity("students")
  class Student{
@@ -16,7 +17,9 @@ import { Country } from "./Country";
   
      @ManyToOne(type=>Country,student=>Student,{eager:true})
      country:Country[];
-  
+
+     @ManyToOne(type=>Room, students=>Student)
+     rooms: Room[]
      @Column()
      number_phone:string;
      
