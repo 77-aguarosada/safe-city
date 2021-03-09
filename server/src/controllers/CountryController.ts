@@ -30,6 +30,17 @@ class CountryController{
 
     }
 
+   
+    async show(request:Request, response:Response){
+     
+        const countryRepository =getCustomRepository(CountriesRepository);
+
+        const allcountries = await countryRepository.find()
+
+        return response.json(allcountries);
+
+    }
+
 
 }
 

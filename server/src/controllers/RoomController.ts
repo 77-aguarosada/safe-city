@@ -29,6 +29,15 @@ class RoomController{
 
 
     }
+    async show(request:Request, response:Response){
+     
+        const roomsRepository = getCustomRepository(RoomsRepository);
+
+        const allrooms = await roomsRepository.find()
+
+        return response.json(allrooms);
+
+    }
 
 
 }
