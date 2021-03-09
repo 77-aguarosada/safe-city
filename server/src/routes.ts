@@ -22,7 +22,9 @@ router.delete("/students/:id",studentController.delete)
 
 const roomController = new RoomController()
 router.post("/students/rooms", roomController.create)
+
 /************************************************* */
 const countryController =new CountryController();
 router.post("/students/country",countryController.create)
+router.get("/students/country", countryController.show)
 export {router}
