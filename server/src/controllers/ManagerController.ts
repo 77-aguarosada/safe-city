@@ -28,4 +28,4 @@ class ManagerController{
 
 }
 
-export{ManagerController}
+export {ManagerController}
