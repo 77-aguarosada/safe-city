@@ -4,10 +4,13 @@ import { CountryController } from './controllers/CountryController';
 import { ManagerController } from './controllers/ManagerController';
 import { RoomController } from './controllers/RoomController';
 import { StudentController } from './controllers/StudentController';
-
+import {AuthenticateManager } from './controllers/AuthenticateManager'
 
 
 const router = Router();
+const authenticateManager = new AuthenticateManager()
+router.post('/session',authenticateManager.authenticate)
+
 
 const studentController = new StudentController()
 
