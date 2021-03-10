@@ -1,5 +1,6 @@
 import { Response , Request} from "express"
 import { getCustomRepository } from "typeorm";
+import {hash} from 'bcryptjs'
 import { ManagersRepository } from "../repositories/ManagersRepository";
 
 class ManagerController{
@@ -16,8 +17,11 @@ class ManagerController{
             throw new Error('Email address alredy used')
         }
 
+        const hashedPassword = await hash(password, 8);
         const manager = managersRepository.create({
-            name, email, password
+            name, 
+            email, 
+            password: hashedPassword,
         })
         
         await managersRepository.save(manager)
