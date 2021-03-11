@@ -12,7 +12,9 @@ class Auth{
     const {authorization} = request.headers;
     
     if(!authorization){
-        return response.sendStatus(401);
+      return response.status(400).json({
+        error:"JWT token is missing",
+    })
     }
 
     const token = authorization.replace('Bearer','').trim();
@@ -27,7 +29,9 @@ class Auth{
          return next();
 
     }catch{
-        return response.sendStatus(401);
+      return response.status(400).json({
+        error:"Invalid JWT token",
+    })
     }
   }
 }
