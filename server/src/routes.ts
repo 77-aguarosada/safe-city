@@ -5,11 +5,16 @@ import { ManagerController } from './controllers/ManagerController';
 import { RoomController } from './controllers/RoomController';
 import { StudentController } from './controllers/StudentController';
 import {AuthenticateManager } from './controllers/AuthenticateManager'
+import { Auth } from './middlewares/authMiddleware';
 
 
 const router = Router();
 const authenticateManager = new AuthenticateManager()
 router.post('/session',authenticateManager.authenticate)
+
+
+
+
 
 
 const studentController = new StudentController()
@@ -35,6 +40,12 @@ router.get("/students/country", countryController.show)
 /**************************************************** */
 
 const managerController = new ManagerController()
-router.post("/",managerController.create)
+router.post("/manager",managerController.create)
+
+
+
+const auth = new Auth();
+router.get('/manager',auth.authMiddleware,managerController.index)
+
 
 export {router}
