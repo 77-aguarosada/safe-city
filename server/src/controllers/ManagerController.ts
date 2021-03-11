@@ -17,7 +17,9 @@ class ManagerController{
         });
         
         if(checkManegerExists){
-            throw new Error('Email address alredy used')
+            return response.status(400).json({
+                error:"Incorrect email/password combination",
+            })
         }
 
         const hashedPassword = await hash(password, 8);
