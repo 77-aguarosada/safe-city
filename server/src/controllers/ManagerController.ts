@@ -4,6 +4,9 @@ import {hash} from 'bcryptjs'
 import { ManagersRepository } from "../repositories/ManagersRepository";
 
 class ManagerController{
+    index(request:Request, response:Response){
+        return response.send('ok');
+    }
     async create(request:Request, response:Response){
         const {name, email, password} = request.body;
 
