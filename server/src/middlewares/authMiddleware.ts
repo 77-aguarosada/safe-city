@@ -1,6 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from 'jsonwebtoken'
 
+interface TokenPayload{
+  id:string;
+  iat:number;
+  exp:number;
+}
 class Auth{
   async authMiddleware(request:Request, response:Response, next: NextFunction){
 
@@ -14,7 +19,13 @@ class Auth{
 
     try{
          const data =  jwt.verify(token,'secret')
-         console.log(data)
+         
+         const {id} = data as TokenPayload;
+
+         request.managerId = id;
+
+         return next();
+
     }catch{
         return response.sendStatus(401);
     }
