@@ -15,12 +15,16 @@ class AuthenticateManager{
         });
         
         if(!checkManegerExists){
-            throw new Error('Incorrect email/password combination.')
+            return response.status(400).json({
+                error:"Incorrect email/password combination",
+            })
         }
         const passwordMatched = await  compare(password, checkManegerExists.password);
 
         if(!passwordMatched){
-            throw new Error('Incorrect email/password combination.')
+            return response.status(400).json({
+                error:"Incorrect email/password combination",
+            })
     
         }
         
