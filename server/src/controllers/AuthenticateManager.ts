@@ -14,7 +14,7 @@ class AuthenticateManager{
             where:{email},
         });
         
-        if(checkManegerExists){
+        if(!checkManegerExists){
             throw new Error('Incorrect email/password combination.')
         }
         const passwordMatched = await  compare(password, checkManegerExists.password);
@@ -24,8 +24,9 @@ class AuthenticateManager{
     
         }
         
-        const token = jwt.sign({id:checkManegerExists.id},'secrete' ,{expiresIn:'1d'})
-     
+        const token = jwt.sign({id:checkManegerExists.id},'secret' ,{expiresIn:'1d'})
+        
+        delete checkManegerExists.password
         return response.json({
             checkManegerExists,
             token,
