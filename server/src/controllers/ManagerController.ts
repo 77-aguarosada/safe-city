@@ -5,7 +5,7 @@ import { ManagersRepository } from "../repositories/ManagersRepository";
 
 class ManagerController{
     index(request:Request, response:Response){
-        return response.send('ok');
+        return response.send({managerID:request.managerId});
     }
     async create(request:Request, response:Response){
         const {name, email, password} = request.body;
