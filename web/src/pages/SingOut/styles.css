@@ -16,38 +16,38 @@ input:focus {
 }
 
 
-img#tm{
-    width: 490px;
-    height: 460px;
+img#tm-sing{
+    width: 590px;
+    height: 360px;
   
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 10px;
     
 
 }
 
-div#tel-login{
+div#tel-sing{
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    
     margin: 0 auto;
 }
 
-div#tel-login-container{
+div#tel-sing-container{
     background: #18191d;
     display: flex;
     flex-direction: column;
     padding: 15px;
     border-radius: 4px;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-bottom: 10px;
     max-width: 300px;
    
 }
-div#tel-login-container h2,span{
+div#tel-sing-container h2,span{
     color:white;
 }
-div#tel-login-container h2{
+div#tel-sing-container h2{
     margin-top: 20px;
     margin-bottom: 20px;
 
@@ -57,7 +57,7 @@ div#tel-login-container h2{
     letter-spacing: -.03em;
     font-weight: 700;
 }
-div#tel-login-container span{
+div#tel-sing-container span{
     margin-top: 2px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -65,7 +65,7 @@ div#tel-login-container span{
     letter-spacing: -.03em;
     font-weight: 400;
 }
-div#tel-login-container input{
+div#tel-sing-container input{
     margin-top: 2px;
     margin-bottom: 20px;
     height: 30px;
@@ -108,5 +108,8 @@ button.tbn{
     letter-spacing: -.03em;
     font-weight: 400;
     height: 35px;
+    
+  
+   
     
 }
