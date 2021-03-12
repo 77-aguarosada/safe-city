@@ -18,8 +18,8 @@ export default function SingIn(){
                     <span>Digite seus dados para entrar e acessar o conteúdo.</span>
               
              
-                   <input type="text" placeholder="E-mail"/>
-                   <input type="text" placeholder="Senha"/>
+                   <input className="input" type="text" placeholder="E-mail"/>
+                   <input className="input" type="text" placeholder="Senha"/>
                    <button className="cadastrar btn">Entrar</button>
                </div>
 
