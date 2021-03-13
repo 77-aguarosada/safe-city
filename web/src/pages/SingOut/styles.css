@@ -9,7 +9,7 @@ div#section{
     height: 100%;
   
 }
-input:focus {
+input.input:focus {
     outline: none !important;
     border:2px solid  #870cf7;
     box-shadow: 0 0 10px #719ECE;
