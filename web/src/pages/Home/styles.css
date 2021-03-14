@@ -11,11 +11,21 @@
     justify-content:space-between;
     align-items: center;
     background: #870cf7;
+    background: #04D361;
  
 }
 #avatar-home-page{
     display: flex;
     flex-direction: column;
+}
+.avatar-name-univer{
+    font-weight: bold;
+    margin-left: 10px;
+}
+#icon-univer-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #das-home-page{
     background:#1e1f54;
@@ -44,6 +54,11 @@
     font-weight: 400;
 }
 
+#user-page{
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 3px;
+}
 section#all-student-home-page{
     display: flex;
     flex-direction: column;
@@ -94,11 +109,11 @@ section#all-student-home-page{
 
 #students{
     display: flex;
-    margin-left: 10px;
+  
     align-items: center;
     background: white;
-    width: 250px;
-    height: 40px;
+    width: 480px;
+    height: 50px;
     border-radius: 4px;
     font-size: 12px;
     font-family: Roboto;
@@ -106,7 +121,12 @@ section#all-student-home-page{
     font-weight: 700;
     margin-bottom: 10px;
     justify-content: space-between;
+    transition-duration: 0.2s;
    
+}
+
+#students:hover{
+    transform:translateX(10px);
 }
 #borda{
     border: 2px solid rgb(102, 197, 98);
@@ -124,4 +144,49 @@ section#all-student-home-page{
 .sp{
     color:#333;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
+#univer-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form#form-input-home-page{
+    max-width: 900px;
+    display:flex;
+}
+#for-search{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+     margin: 0 auto;
+}
+form#form-input-home-page input{
+    height: 40px;
+    padding: 0 24px;
+    border:0;
+    border-radius: 5px 0 0 5px;
+    width: 400px;
+    margin-bottom:18px ;
+}
+form#form-input-home-page input::placeholder{
+    color:#a8a8b3;
+}
+form#form-input-home-page button{
+    width: 80px;
+    height: 40px;
+    background: #04D361;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    color:white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+
+}
+form#form-input-home-page button:hover{
+    background: #1aa056;
+}
+
