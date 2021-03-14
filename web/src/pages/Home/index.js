@@ -1,4 +1,7 @@
 import "./styles.css"
+import {FiChevronRight} from 'react-icons/fi'
+import {MdSchool} from 'react-icons/md'
+import {MdBusiness}from 'react-icons/md'
 export default function Home(){
 
 
@@ -14,8 +17,11 @@ export default function Home(){
                       </div>
                      
                      <div id="avatar-home-page">
-                      <span>Vsuet</span> 
-                      <span>Luis Agua Rosada</span>  
+                        <div id="icon-univer-page">
+                        <MdBusiness size={20}/>
+                      <span className="avatar-name-univer">VSUET</span> 
+                        </div>
+                      <span id="user-page">Luis Água Rosada</span>  
                      </div>
 
                    </header>
@@ -40,13 +46,52 @@ export default function Home(){
                             
                             </ul>
                         </div>
-                        <div>
+                        <div id="for-search">
+                          <form id="form-input-home-page"action="">
+                               <input placeholder="search students"/>
+                               <button type="submit">Search</button>
+
+                          </form>
+
+
                           <div id="students">
                               <span id="borda">2</span>
                               <span className="sp">Yolanda Barrueco</span>
-                              <span className="sp">uits</span>
+                              <div id="univer-home">
+                                <MdSchool color="#cbcbd6"size={20}/>
+                                <span className="sp">UITS</span>
+                               
+                              </div>
+                              <FiChevronRight color="#cbcbd6"size={20}/>
 
                           </div>
+
+                          
+                          <div id="students">
+                              <span id="borda">2</span>
+                              <span className="sp">Yolanda Barrueco</span>
+                              <div id="univer-home">
+                                <MdSchool color="#cbcbd6"size={20}/>
+                                <span className="sp">UITS</span>
+                               
+                              </div>
+                              <FiChevronRight color="#cbcbd6"size={20}/>
+
+                          </div>
+                          <div id="students">
+                              <span id="borda">2</span>
+                              <span className="sp">Yolanda Barrueco</span>
+                              <div id="univer-home">
+                                <MdSchool color="#cbcbd6"size={20}/>
+                                <span className="sp">UITS</span>
+                               
+                              </div>
+                              <FiChevronRight color="#cbcbd6"size={20}/>
+
+                          </div>
+
+
+
 
 
 
