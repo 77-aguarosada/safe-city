@@ -1,14 +1,33 @@
+import { useState, useEffect} from "react"
 import './styles.css'
-import login from "../../images/login.png"
+import loginIm from "../../images/login.png"
+import api from '../../services/api'
 
 
 export default function SingIn(){
-  
+     
+    const [login, setlogin] = useState([]);
+
+    useEffect(()=>{
+        
+        async function loadApi(){
+            const response = await api.get("/students");
+
+            setlogin(response.data);
+            
+            console.log(response.data);
+
+        }
+        loadApi();
+    },[])
+
+    
+
     return(
        
         <div id="section">
             <div id="tm-img">
-                <img id="tm"src={login} alt=""/>
+                <img id="tm"src={loginIm} alt=""/>
 
             </div>
 
