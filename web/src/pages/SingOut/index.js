@@ -11,15 +11,22 @@ export default function SingOut(){
 
    async function handleSubmit(){
         const data = {name:nome,email:email,password:senha}
+       
+     if(nome !=='' && email!== ''&& senha !==''){
 
-        const response = await api.post('manager',data)
+        const response = await api.post('/manager',data)
         
-        if(!response.status===400){
+        if(response.status!==400){
             window.location.href='/home'
         }
-         else{
+        else{
              alert('Error ao cadastar o usuario!')
-         }
+          }
+
+     } else{
+        alert('Error preencha os campos !')
+     }
+       
     }
     
     return (
