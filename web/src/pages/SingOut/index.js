@@ -1,9 +1,27 @@
+import {useState} from 'react';
 import './styles.css'
 import out from "../../images/out.png"
 
-
+import api from '../../services/api'
 export default function SingOut(){
 
+    const [nome, setNome]= useState('');
+    const [email, setEmail]= useState('');
+    const [senha, setSenha]= useState('');
+
+   async function handleSubmit(){
+        const data = {name:nome,email:email,password:senha}
+
+        const response = await api.post('manager',data)
+        
+        if(!response.status===400){
+            window.location.href='/home'
+        }
+         else{
+             alert('Error ao cadastar o usuario!')
+         }
+    }
+    
     return (
         <div id="section">
         
@@ -14,14 +32,51 @@ export default function SingOut(){
                 <span>Digite seus dados para entrar e acessar o conteúdo.</span>
           
          
-               <input className="input" type="text" placeholder="Nome"/>
-               <input className="input" type="text" placeholder="E-mail"/>
-               <input className="input" type="text" placeholder="Senha"/>
+               <input
+                name="nome"
+                className="input"
+                type="text"
+                placeholder="Nome"
                
-               <button className="cadastrar btn">Cadastrar</button>
+                value={nome}
+                onChange={e=> setNome(e.target.value)}
+                   
+                   />
+               <input 
+               name="email" 
+               className="input"
+               autoComplete="email" 
+               type="text" 
+               placeholder="E-mail"
+               
+               value={email}
+               onChange={e=>setEmail(e.target.value)}
+               />
+               <input 
+               name="senha"
+                className="input" 
+                type="password" 
+                required
+                autoComplete="senha"
+                placeholder="Senha"
+                
+                value={senha}
+                onChange={e=>setSenha(e.target.value)}
+                />
+               
+               <button 
+               className="cadastrar btn"
+               type="submit"
+               onClick={handleSubmit}
+               >Cadastrar</button>
            </div>
 
-           <button className="cadastrar tbn">Já tem uma conta? Faça login.</button>
+           <button 
+           className="cadastrar tbn"
+          
+           >
+               Já tem uma conta? Faça login.
+               </button>
 
 
         </div>
