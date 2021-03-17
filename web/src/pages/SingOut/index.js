@@ -2,7 +2,10 @@ import {useState} from 'react';
 import './styles.css'
 import out from "../../images/out.png"
 
+
 import api from '../../services/api'
+
+
 export default function SingOut(){
 
     const [nome, setNome]= useState('');
@@ -12,7 +15,7 @@ export default function SingOut(){
    async function handleSubmit(){
         const data = {name:nome,email:email,password:senha}
        
-     if(nome !=='' && email!== ''&& senha !==''){
+     if(nome !=='' && email !== ''&& senha !==''){
 
         const response = await api.post('/manager',data)
         

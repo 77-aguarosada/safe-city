@@ -6,22 +6,45 @@ import api from '../../services/api'
 
 export default function SingIn(){
      
-    const [login, setlogin] = useState([]);
+    //const [login, setlogin] = useState([]);
+   
 
-    useEffect(()=>{
+   // useEffect(()=>{
         
-        async function loadApi(){
-            const response = await api.get("/students");
+       // async function loadApi(){
+           // const response = await api.get("/students");
 
-            setlogin(response.data);
+            ///setlogin(response.data);
             
-            console.log(response.data);
+            //console.log(response.data);
 
+       // }
+       // loadApi();
+  //  },[])
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('')
+
+  async function handleSubmitLogin(){
+    const data = {email:email,password:senha}
+   
+        if( email!== ''&& senha !==''){
+
+            const response = await api.post('/session',data)
+            
+            if(response.status!==400){
+                window.location.href='/home'
+            }
+            else{
+                alert('Error ao fazer o login ')
+            }
+
+        } else{
+            alert('Error preencha os campos !')
         }
-        loadApi();
-    },[])
+        
+        }
 
-    
+
 
     return(
        
@@ -37,12 +60,39 @@ export default function SingIn(){
                     <span>Digite seus dados para entrar e acessar o conteúdo.</span>
               
              
-                   <input className="input" type="text" placeholder="E-mail"/>
-                   <input className="input" type="text" placeholder="Senha"/>
-                   <button className="cadastrar btn">Entrar</button>
+                   <input 
+                   className="input" 
+                   type="text" 
+                   placeholder="E-mail"
+                  
+                   name="email"
+                   autoComplete="email" 
+                  
+                   value={email}
+                   onChange={e=>setEmail(e.target.value)}
+                   
+                   />
+                   <input 
+                   className="input"
+                   type="password" 
+                   placeholder="Senha"
+                    name="senha"
+                    required
+                   value={senha}
+                   onChange={e=>setSenha(e.target.value)}
+                   
+                   />
+                   <button 
+                   className="cadastrar btn"
+                   type="submit"
+                   onClick={handleSubmitLogin}
+                   >Entrar</button>
                </div>
 
-               <button className="cadastrar tbn">Ainda não tem conta? Cadastre-se.</button>
+               <button 
+               className="cadastrar tbn"
+             
+               >Ainda não tem conta? Cadastre-se.</button>
  
 
             </div>
